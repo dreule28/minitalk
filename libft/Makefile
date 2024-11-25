@@ -4,9 +4,6 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -rf
 
-FT_PRINTF_PATH := ft_printf
-FT_PRINTF := $(FT_PRINTF_PATH)/ftprintf.a
-
 SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
 	ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c \
@@ -21,25 +18,29 @@ BONUS_SRCS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 
 GNL_SRCS = get_next_line/get_next_line.c get_next_line/get_next_line_utils.c
 
+FT_PRINTF_SRCS = ft_printf/ft_printf.c ft_printf/print_char.c ft_printf/print_inti.c \
+				ft_printf/print_itoa.c ft_printf/print_low.c ft_printf/print_percenti.c \
+				ft_printf/print_pointer.c ft_printf/print_putstr_itoa.c ft_printf/print_str.c \
+				ft_printf/print_un_int.c ft_printf/print_upp.c ft_printf/print_void.c
+
 OBJS = $(SRCS:.c=.o)
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 GNL_OBJS = $(GNL_SRCS:.c=.o)
+FT_PRINTF_OBJS = $(FT_PRINTF_SRCS:.c=.o)
 
-$(FT_PRINTF):
-	$(MAKE) -C $(FT_PRINTF_PATH)
 
 all: $(NAME)
-$(NAME): $(OBJS) $(GNL_OBJS) $(FT_PRINTF)
-	$(AR) $(NAME) $(OBJS) $(GNL_OBJS)
+$(NAME): $(OBJS) $(GNL_OBJS) $(FT_PRINTF_OBJS)
+	$(AR) $(NAME) $(OBJS) $(GNL_OBJS) $(FT_PRINTF_OBJS)
 
-bonus: $(OBJS) $(BONUS_OBJS) $(FT_PRINTF)
+bonus: $(OBJS) $(BONUS_OBJS)
 	$(AR) $(NAME) $(OBJS) $(BONUS_OBJS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS) $(BONUS_OBJS) $(GNL_OBJS) $(FT_PRINTF)
+	$(RM) $(OBJS) $(BONUS_OBJS) $(GNL_OBJS) $(FT_PRINTF_OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
