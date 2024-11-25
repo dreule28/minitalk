@@ -6,7 +6,7 @@
 /*   By: dreule <dreule@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:10:40 by dreule            #+#    #+#             */
-/*   Updated: 2024/11/25 13:56:46 by dreule           ###   ########.fr       */
+/*   Updated: 2024/11/25 16:17:19 by dreule           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	handle_signal(int signal_nb)
 	}
 }
 
-int	main(void)
+int	server_main(void)
 {
 	struct sigaction	sa;
 	pid_t				pid;

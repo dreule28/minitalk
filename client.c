@@ -6,7 +6,7 @@
 /*   By: dreule <dreule@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 08:31:51 by dreule            #+#    #+#             */
-/*   Updated: 2024/11/25 15:25:58 by dreule           ###   ########.fr       */
+/*   Updated: 2024/11/25 16:17:24 by dreule           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	send_signal(char *str, pid_t pid)
 			count--;
 		}
 		i++;
-	count = 0;
+		count = 0;
 	}
 	while (count < 8)
 	{
@@ -41,7 +41,7 @@ void	send_signal(char *str, pid_t pid)
 	}
 }
 
-int	main(int argc, char *argv[])
+int	client_main(int argc, char *argv[])
 {
 	pid_t	pid;
 
