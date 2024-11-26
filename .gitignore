@@ -1,4 +1,2 @@
 libft/*.o
-libft
 *.o
-_obj
