@@ -6,7 +6,7 @@
 /*   By: dreule <dreule@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 08:31:51 by dreule            #+#    #+#             */
-/*   Updated: 2024/11/26 08:21:07 by dreule           ###   ########.fr       */
+/*   Updated: 2024/11/26 09:26:13 by dreule           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	send_signal(char *str, pid_t pid)
 				kill(pid, SIGUSR1);
 			else
 				kill(pid, SIGUSR2);
-			usleep(500);
+			usleep(50);
 			count--;
 		}
 		i++;
@@ -36,7 +36,7 @@ void	send_signal(char *str, pid_t pid)
 	while (count < 8)
 	{
 		kill(pid, SIGUSR1);
-		usleep(500);
+		usleep(50);
 		count++;
 	}
 }
