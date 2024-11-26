@@ -6,7 +6,7 @@
 /*   By: dreule <dreule@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 08:31:51 by dreule            #+#    #+#             */
-/*   Updated: 2024/11/25 16:17:24 by dreule           ###   ########.fr       */
+/*   Updated: 2024/11/26 08:21:07 by dreule           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	send_signal(char *str, pid_t pid)
 	}
 }
 
-int	client_main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	pid_t	pid;
 
@@ -51,5 +51,4 @@ int	client_main(int argc, char *argv[])
 	if (kill(pid, 0) == -1)
 		return (ft_printf("Invalid PID!\n"), 1);
 	send_signal(argv[2], pid);
-	return (0);
 }
