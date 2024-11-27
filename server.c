@@ -6,7 +6,7 @@
 /*   By: dreule <dreule@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:10:40 by dreule            #+#    #+#             */
-/*   Updated: 2024/11/26 08:21:04 by dreule           ###   ########.fr       */
+/*   Updated: 2024/11/27 10:56:40 by dreule           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,5 @@ int	main(void)
 		ft_printf("What are you doing???\n");
 	while (1)
 		pause();
+	return (0);
 }
